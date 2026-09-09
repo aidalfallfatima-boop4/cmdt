@@ -1,0 +1,4 @@
+# Présentation exécutive CMDT AI — dépendances des scripts de génération.
+#   pip install -r scripts/requirements.txt
+reportlab>=4.0
+python-pptx>=0.6.23

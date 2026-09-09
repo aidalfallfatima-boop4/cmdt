@@ -62,6 +62,20 @@ npm run preview
 npm run lint       # oxlint
 ```
 
+## Présentation exécutive
+
+Deux scripts génèrent un support de présentation 16:9 (18 pages, charte navy / vert) pour la
+Direction Générale — contenu partagé dans `scripts/content.py` :
+
+```bash
+pip install -r scripts/requirements.txt
+python scripts/build_pdf.py     # → cmdt-ai-presentation.pdf
+python scripts/build_pptx.py    # → cmdt-ai-presentation.pptx
+```
+
+Plan : Couverture → Pourquoi maintenant → Le produit → Parcours des 10 modules →
+Prévisions & scénarios → Risques & IA responsable → Vision de déploiement → Prochaines étapes.
+
 ## Déploiement GitHub Pages
 
 Le workflow `.github/workflows/deploy.yml` construit et publie `dist/` sur GitHub Pages à chaque
