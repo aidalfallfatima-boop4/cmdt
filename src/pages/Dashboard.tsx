@@ -68,7 +68,7 @@ export default function Dashboard() {
         }
       />
 
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-6">
+      <div className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6">
         <KpiCard label="Production coton graine" value={tonnes(flow(last.cotonGraine))} delta={NATIONAL_KPIS.cotonGraine.delta} spark={kpiSpark('cotonGraine')} sparkTone="up" icon={<Sprout size={15} />} accent delay={0} />
         <KpiCard label="Rendement moyen" value={kgha(rate(last.rendement))} delta={NATIONAL_KPIS.rendement.delta} spark={kpiSpark('rendement')} sparkTone="up" icon={<Gauge size={15} />} delay={40} />
         <KpiCard label="Fibre produite" value={tonnes(flow(last.fibre))} delta={NATIONAL_KPIS.fibre.delta} spark={kpiSpark('fibre')} sparkTone="up" icon={<Factory size={15} />} delay={80} />

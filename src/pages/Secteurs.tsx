@@ -55,7 +55,7 @@ export default function Secteurs() {
     <div className="fade-up">
       <PageHeader title="Intelligence du réseau de production" subtitle={`${SECTEURS.length} secteurs suivis · ${ZONE_STATS.length} filiales`} />
 
-      <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
         <KpiCard label="Secteurs suivis" value={num(SECTEURS.length)} icon={<Building2 size={15} />} accent />
         <KpiCard label="Score moyen réseau" value={scoreAvg.toLocaleString('fr-FR')} icon={<Gauge size={15} />} delay={40} />
         <KpiCard label="Secteurs à risque élevé" value={num(nRisk)} icon={<ShieldAlert size={15} />} delay={80} />

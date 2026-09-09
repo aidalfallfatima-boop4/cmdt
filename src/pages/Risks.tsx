@@ -26,7 +26,7 @@ export default function Risks() {
     <div className="fade-up">
       <PageHeader title="Risques & Alertes" subtitle="Cartographie des risques structurels, anomalies détectées et alertes opérationnelles" />
 
-      <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
         <KpiCard label="Risques suivis" value={num(RISK_REGISTER.length)} icon={<ShieldAlert size={15} />} accent />
         <KpiCard label="Risques critiques (≥ 70)" value={num(nCrit)} icon={<AlertOctagon size={15} />} delay={40} />
         <KpiCard label="Anomalies détectées (30 j)" value={num(ANOMALIES.length)} icon={<Radar size={15} />} delay={80} />

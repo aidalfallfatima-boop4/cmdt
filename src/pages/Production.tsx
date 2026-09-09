@@ -102,7 +102,7 @@ export default function Production() {
         }
       />
 
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-4 xl:grid-cols-7">
+      <div className="grid grid-cols-2 gap-3 md:grid-cols-4 xl:grid-cols-7">
         <KpiCard label="Superficie" value={hectares(flow(last.superficie))} delta={2.4} icon={<Map size={15} />} accent />
         <KpiCard label="Coton graine" value={tonnes(flow(last.cotonGraine))} delta={7.2} icon={<Sprout size={15} />} delay={40} />
         <KpiCard label="Rendement" value={kgha(last.rendement)} delta={3.1} icon={<Gauge size={15} />} delay={80} />

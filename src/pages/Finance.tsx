@@ -45,7 +45,7 @@ export default function Finance() {
     <div className="fade-up">
       <PageHeader title="Finance & Filière" subtitle="Crédit de campagne, coûts filière, budget et marge — Direction Financière" />
 
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-6">
+      <div className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6">
         <KpiCard label="Recettes" value={fcfa(FINANCE_KPIS.recettes.value)} delta={FINANCE_KPIS.recettes.delta} icon={<Landmark size={15} />} accent />
         <KpiCard label="Coûts filière" value={fcfa(FINANCE_KPIS.couts.value)} delta={FINANCE_KPIS.couts.delta} icon={<Coins size={15} />} delay={40} />
         <KpiCard label="Marge filière" value={`${FINANCE_KPIS.marge.value.toLocaleString('fr-FR')} %`} delta={FINANCE_KPIS.marge.delta} deltaSuffix="pt" icon={<Percent size={15} />} delay={80} />

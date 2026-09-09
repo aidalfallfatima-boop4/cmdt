@@ -27,7 +27,7 @@ export default function Egrenage() {
     <div className="fade-up">
       <PageHeader title="Collecte & Égrenage" subtitle="Évacuation du coton graine, production de fibre et capacité industrielle" />
 
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-6">
+      <div className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6">
         <KpiCard label="Coton graine collecté" value={tonnes(EGRENAGE_KPIS.cotonGraineCollecte.value)} delta={EGRENAGE_KPIS.cotonGraineCollecte.delta} icon={<Factory size={15} />} accent />
         <KpiCard label="Fibre produite" value={tonnes(EGRENAGE_KPIS.fibreProduite.value)} delta={EGRENAGE_KPIS.fibreProduite.delta} icon={<Package size={15} />} delay={40} />
         <KpiCard label="Stock fibre" value={tonnes(EGRENAGE_KPIS.stockFibre.value)} delta={EGRENAGE_KPIS.stockFibre.delta} icon={<Boxes size={15} />} delay={80} />
