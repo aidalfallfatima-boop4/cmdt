@@ -40,8 +40,8 @@ export function PageHeader({
   return (
     <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
       <div className="min-w-0">
-        <h1 className="font-serif text-xl text-navy-900 sm:text-2xl">{title}</h1>
-        {subtitle && <p className="mt-1 text-sm text-ink-muted">{subtitle}</p>}
+        <h1 className="font-serif text-lg text-navy-900 sm:text-xl">{title}</h1>
+        {subtitle && <p className="mt-1 text-[13px] text-ink-muted">{subtitle}</p>}
       </div>
       {right && (
         <div className="flex max-w-full flex-wrap items-center gap-2 sm:justify-end">{right}</div>

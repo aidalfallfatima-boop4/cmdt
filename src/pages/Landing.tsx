@@ -45,10 +45,10 @@ export default function Landing() {
       <main className="mx-auto max-w-6xl px-6 pb-20">
         <section className="py-16 sm:py-24">
           <span className="chip border-white/20 bg-white/5 text-white/70">{PRODUCT.disclaimer}</span>
-          <h1 className="mt-6 max-w-3xl font-serif text-4xl leading-tight sm:text-5xl">
+          <h1 className="mt-6 max-w-3xl font-serif text-3xl leading-tight sm:text-4xl">
             L'intelligence des données au service de la filière cotonnière
           </h1>
-          <p className="mt-5 max-w-2xl text-lg text-white/70">
+          <p className="mt-5 max-w-2xl text-base text-white/70">
             Transformer les données agricoles, industrielles, financières et territoriales de la CMDT en informations
             exploitables, prévisions et recommandations — pour la Direction Générale et les responsables habilités. Ce
             n'est pas un chatbot : c'est un système d'intelligence décisionnelle.
@@ -67,7 +67,7 @@ export default function Landing() {
           {PILLARS.map((p) => (
             <div key={p.title} className="rounded-card border border-white/10 bg-white/5 p-6">
               <p.icon size={22} className="text-leaf" />
-              <h3 className="mt-4 text-lg font-semibold">{p.title}</h3>
+              <h3 className="mt-4 text-base font-semibold">{p.title}</h3>
               <p className="mt-2 text-sm text-white/65">{p.body}</p>
             </div>
           ))}

@@ -51,7 +51,7 @@ export default function Login() {
           </div>
         </div>
         <div>
-          <h2 className="font-serif text-3xl leading-tight">Accès sécurisé à la plateforme de pilotage</h2>
+          <h2 className="font-serif text-2xl leading-tight">Accès sécurisé à la plateforme de pilotage</h2>
           <ul className="mt-6 space-y-3">
             {SECURITY.map((s) => (
               <li key={s} className="flex items-center gap-2.5 text-sm text-white/70">

@@ -117,7 +117,7 @@ export default function Scenarios() {
             {outputs.map((o) => (
               <div key={o.label} className={`card p-4 ${o.accent ? 'ring-1 ring-leaf/40' : ''}`}>
                 <p className="stat-label">{o.label}</p>
-                <p className="kpi-value mt-1 text-xl">
+                <p className="kpi-value mt-1">
                   {o.accent ? o.fmt(o.base + o.eff) : o.fmt(o.base * (1 + o.eff / 100))}
                 </p>
                 <p className={`text-xs font-semibold ${o.eff > 0.2 ? 'text-pos' : o.eff < -0.2 ? 'text-neg' : 'text-ink-faint'}`}>
