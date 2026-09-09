@@ -196,8 +196,9 @@ export function Layout() {
         </main>
 
         <footer className="border-t border-line px-4 py-4 text-center text-[11px] text-ink-faint lg:px-8">
-          <span className="font-semibold text-ink-muted">{PRODUCT.name}</span> · {PRODUCT.tagline} · {PRODUCT.org} ·{' '}
-          {PRODUCT.disclaimer} · {PRODUCT.version}
+          <span className="font-semibold text-ink-muted">{PRODUCT.name}</span>
+          <span className="hidden sm:inline"> · {PRODUCT.tagline} · {PRODUCT.org}</span> · {PRODUCT.disclaimer} ·{' '}
+          {PRODUCT.version}
         </footer>
       </div>
     </div>
