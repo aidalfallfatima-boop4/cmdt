@@ -88,9 +88,9 @@ export default function SecteurDetail() {
 
       <div className="grid gap-4 lg:grid-cols-3">
         <Card className="p-5">
-          <div className="flex items-center gap-4">
+          <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:text-left">
             <ScoreRing score={s.score} />
-            <div className="text-sm">
+            <div className="w-full text-sm">
               <p className="text-ink-muted">
                 Écart vs moyenne réseau :{' '}
                 <span className={s.score >= netAvg ? 'font-semibold text-pos' : 'font-semibold text-neg'}>

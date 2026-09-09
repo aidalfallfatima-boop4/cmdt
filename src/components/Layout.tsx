@@ -109,7 +109,7 @@ function NotificationCenter({ open, onClose }: { open: boolean; onClose: () => v
   return (
     <>
       <div className="fixed inset-0 z-30" onClick={onClose} />
-      <div className="absolute right-0 top-11 z-40 w-80 overflow-hidden rounded-card border border-line bg-surface shadow-pop">
+      <div className="absolute right-0 top-11 z-40 w-[min(20rem,calc(100vw-1.5rem))] overflow-hidden rounded-card border border-line bg-surface shadow-pop">
         <div className="border-b border-line px-4 py-3 text-sm font-semibold text-ink">Notifications</div>
         <ul className="max-h-96 divide-y divide-line overflow-y-auto">
           {NOTIFICATIONS.map((n) => (
@@ -164,12 +164,12 @@ export function Layout() {
           <button type="button" onClick={() => setMobileOpen(true)} className="text-ink-muted lg:hidden">
             <Menu size={20} />
           </button>
-          <div className="flex items-center gap-1.5 text-sm">
-            <span className="text-ink-faint">CMDT AI</span>
-            <ChevronRight size={14} className="text-ink-faint" />
-            <span className="font-medium text-ink">{title}</span>
+          <div className="flex min-w-0 items-center gap-1.5 text-sm">
+            <span className="hidden text-ink-faint sm:inline">CMDT AI</span>
+            <ChevronRight size={14} className="hidden shrink-0 text-ink-faint sm:inline" />
+            <span className="truncate font-medium text-ink">{title}</span>
           </div>
-          <div className="ml-auto flex items-center gap-3">
+          <div className="ml-auto flex shrink-0 items-center gap-3">
             <span className="hidden rounded-full border border-line bg-canvas px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-ink-muted sm:inline-flex">
               Prototype · Données synthétiques
             </span>
@@ -191,7 +191,7 @@ export function Layout() {
           </div>
         </header>
 
-        <main className="mx-auto w-full max-w-[1440px] flex-1 px-4 py-6 lg:px-8">
+        <main className="mx-auto w-full max-w-[1440px] flex-1 overflow-x-clip px-4 py-6 lg:px-8">
           <Outlet />
         </main>
 

@@ -91,7 +91,7 @@ export function AIChat() {
   }
 
   return (
-    <div className="card flex h-[640px] flex-col">
+    <div className="card flex h-[70vh] min-h-[440px] flex-col sm:h-[640px]">
       <div className="flex items-center gap-2 border-b border-line px-4 py-3">
         <span className="relative flex h-2.5 w-2.5">
           <span className="pulse-dot absolute inline-flex h-full w-full rounded-full bg-leaf" />

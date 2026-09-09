@@ -25,7 +25,7 @@ const PILLARS = [
 export default function Landing() {
   return (
     <div className="min-h-screen bg-navy-950 text-white">
-      <header className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
+      <header className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-5 py-5 sm:px-6 sm:py-6">
         <div className="flex items-center gap-2.5">
           <div className="grid h-9 w-9 place-items-center rounded-lg bg-leaf">
             <span className="font-serif text-lg font-bold text-navy-950">C</span>
@@ -35,8 +35,10 @@ export default function Landing() {
             <p className="text-[9px] font-medium uppercase tracking-[0.18em] text-white/50">Intelligence Décisionnelle</p>
           </div>
         </div>
-        <Link to="/login" className="btn-leaf">
-          Accéder à la plateforme <ArrowRight size={15} />
+        <Link to="/login" className="btn-leaf shrink-0">
+          <span className="hidden sm:inline">Accéder à la plateforme</span>
+          <span className="sm:hidden">Accéder</span>
+          <ArrowRight size={15} />
         </Link>
       </header>
 

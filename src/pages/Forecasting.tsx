@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { PageHeader, Card, CardHeader, Segmented, DemoTag } from '../components/ui'
+import { PageHeader, Card, CardHeader, Segmented, Select, DemoTag } from '../components/ui'
 import { ForecastChart } from '../components/charts'
 import { RecommendationCard } from '../components/cards'
 import { FORECASTS } from '../services/forecasting'
@@ -31,7 +31,17 @@ export default function Forecasting() {
         right={<DemoTag />}
       />
 
-      <Segmented options={FORECASTS.map((x) => x.label) as [string, ...string[]]} value={key} onChange={setKey} />
+      <div className="hidden sm:block">
+        <Segmented options={FORECASTS.map((x) => x.label) as [string, ...string[]]} value={key} onChange={setKey} />
+      </div>
+      <div className="sm:hidden">
+        <Select
+          label="Série"
+          options={FORECASTS.map((x) => ({ value: x.label, label: x.label }))}
+          value={key}
+          onChange={setKey}
+        />
+      </div>
 
       <div className="mt-4 grid gap-4 lg:grid-cols-3">
         <Card className="lg:col-span-2">

@@ -61,7 +61,7 @@ export function LineTrend({
     <ResponsiveContainer width="100%" height={height}>
       <LineChart data={data} margin={{ top: 8, right: 12, bottom: 4, left: 4 }}>
         <CartesianGrid stroke={GRID} vertical={false} />
-        <XAxis dataKey="label" tick={AXIS} tickLine={false} axisLine={{ stroke: GRID }} />
+        <XAxis dataKey="label" tick={AXIS} tickLine={false} axisLine={{ stroke: GRID }} interval="preserveStartEnd" minTickGap={10} />
         <YAxis tick={AXIS} tickLine={false} axisLine={false} width={48} tickFormatter={(v) => compact(Number(v))} />
         <Tooltip
           contentStyle={tipStyle}
@@ -94,7 +94,7 @@ export function MultiLine({
     <ResponsiveContainer width="100%" height={height}>
       <LineChart data={data} margin={{ top: 8, right: 12, bottom: 4, left: 4 }}>
         <CartesianGrid stroke={GRID} vertical={false} />
-        <XAxis dataKey="label" tick={AXIS} tickLine={false} axisLine={{ stroke: GRID }} />
+        <XAxis dataKey="label" tick={AXIS} tickLine={false} axisLine={{ stroke: GRID }} interval="preserveStartEnd" minTickGap={10} />
         <YAxis tick={AXIS} tickLine={false} axisLine={false} width={48} tickFormatter={(v) => compact(Number(v))} />
         <Tooltip contentStyle={tipStyle} formatter={(v: number, n) => [num1(v), n]} />
         <Legend wrapperStyle={{ fontSize: 12 }} />
@@ -127,7 +127,7 @@ export function RecettesCouts({
     <ResponsiveContainer width="100%" height={height}>
       <ComposedChart data={data} margin={{ top: 8, right: 12, bottom: 4, left: 4 }}>
         <CartesianGrid stroke={GRID} vertical={false} />
-        <XAxis dataKey="label" tick={AXIS} tickLine={false} axisLine={{ stroke: GRID }} />
+        <XAxis dataKey="label" tick={AXIS} tickLine={false} axisLine={{ stroke: GRID }} interval="preserveStartEnd" minTickGap={10} />
         <YAxis yAxisId="l" tick={AXIS} tickLine={false} axisLine={false} width={52} tickFormatter={(v) => compact(Number(v))} />
         <YAxis
           yAxisId="r"
@@ -163,7 +163,7 @@ export function BudgetVsActual({
     <ResponsiveContainer width="100%" height={height}>
       <BarChart data={data} margin={{ top: 8, right: 12, bottom: 4, left: 4 }}>
         <CartesianGrid stroke={GRID} vertical={false} />
-        <XAxis dataKey="label" tick={AXIS} tickLine={false} axisLine={{ stroke: GRID }} />
+        <XAxis dataKey="label" tick={AXIS} tickLine={false} axisLine={{ stroke: GRID }} interval="preserveStartEnd" minTickGap={10} />
         <YAxis tick={AXIS} tickLine={false} axisLine={false} width={52} tickFormatter={(v) => compact(Number(v))} />
         <Tooltip contentStyle={tipStyle} formatter={(v: number, n) => [compact(v), n]} />
         <Legend wrapperStyle={{ fontSize: 12 }} />
@@ -195,7 +195,7 @@ export function ForecastChart({
     <ResponsiveContainer width="100%" height={height}>
       <ComposedChart data={merged} margin={{ top: 8, right: 12, bottom: 4, left: 4 }}>
         <CartesianGrid stroke={GRID} vertical={false} />
-        <XAxis dataKey="label" tick={AXIS} tickLine={false} axisLine={{ stroke: GRID }} />
+        <XAxis dataKey="label" tick={AXIS} tickLine={false} axisLine={{ stroke: GRID }} interval="preserveStartEnd" minTickGap={10} />
         <YAxis tick={AXIS} tickLine={false} axisLine={false} width={52} tickFormatter={(v) => compact(Number(v))} domain={['auto', 'auto']} />
         <Tooltip
           contentStyle={tipStyle}
@@ -235,16 +235,19 @@ export function HBars({
         const w = (Math.abs(d.value) / max) * 100
         const color = colorBySign ? (d.value < 0 ? 'bg-neg' : 'bg-leaf') : 'bg-navy-800'
         return (
-          <div key={d.label} className="grid grid-cols-[minmax(120px,1fr)_2fr_auto] items-center gap-3 text-xs">
+          <div
+            key={d.label}
+            className="grid grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)_auto] items-center gap-2 text-xs sm:grid-cols-[minmax(110px,1fr)_2fr_auto] sm:gap-3"
+          >
             <span className="truncate text-ink-muted" title={d.label}>
               {d.label}
             </span>
             <div className="h-2.5 rounded-full bg-navy-50">
               <div className={`h-2.5 rounded-full ${color}`} style={{ width: `${w}%` }} />
             </div>
-            <span className="whitespace-nowrap tabular-nums font-medium text-ink">
+            <span className="whitespace-nowrap text-[11px] tabular-nums font-medium text-ink sm:text-xs">
               {unit === 'FCFA' ? compact(d.value) : num1(d.value)}
-              {d.hint ? <span className="ml-1 font-normal text-ink-faint">{d.hint}</span> : null}
+              {d.hint ? <span className="ml-1 hidden font-normal text-ink-faint sm:inline">{d.hint}</span> : null}
             </span>
           </div>
         )
@@ -309,7 +312,7 @@ export function DeviationBars({
     <ResponsiveContainer width="100%" height={height}>
       <BarChart data={data} margin={{ top: 8, right: 12, bottom: 4, left: 4 }}>
         <CartesianGrid stroke={GRID} vertical={false} />
-        <XAxis dataKey="label" tick={AXIS} tickLine={false} axisLine={{ stroke: GRID }} />
+        <XAxis dataKey="label" tick={AXIS} tickLine={false} axisLine={{ stroke: GRID }} interval="preserveStartEnd" minTickGap={10} />
         <YAxis tick={AXIS} tickLine={false} axisLine={false} width={48} tickFormatter={(v) => compact(Number(v))} />
         <Tooltip contentStyle={tipStyle} formatter={(v: number, n) => [num(v), n]} />
         <Legend wrapperStyle={{ fontSize: 12 }} />

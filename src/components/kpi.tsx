@@ -49,8 +49,12 @@ export function KpiCard({
         {icon && <span className="text-ink-faint">{icon}</span>}
       </div>
       <div className="mt-2 flex items-end justify-between gap-2">
-        <span className="kpi-value">{value}</span>
-        {spark && spark.length > 1 && <Sparkline data={spark} trend={sparkTone} />}
+        <span className="kpi-value min-w-0 break-words">{value}</span>
+        {spark && spark.length > 1 && (
+          <span className="hidden shrink-0 sm:block">
+            <Sparkline data={spark} trend={sparkTone} />
+          </span>
+        )}
       </div>
       {delta !== undefined && (
         <div className="mt-1.5">

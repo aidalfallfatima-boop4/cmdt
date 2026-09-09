@@ -39,11 +39,13 @@ export function PageHeader({
 }) {
   return (
     <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-      <div>
-        <h1 className="font-serif text-2xl text-navy-900">{title}</h1>
+      <div className="min-w-0">
+        <h1 className="font-serif text-xl text-navy-900 sm:text-2xl">{title}</h1>
         {subtitle && <p className="mt-1 text-sm text-ink-muted">{subtitle}</p>}
       </div>
-      {right && <div className="flex flex-wrap items-center gap-2">{right}</div>}
+      {right && (
+        <div className="flex max-w-full flex-wrap items-center gap-2 sm:justify-end">{right}</div>
+      )}
     </div>
   )
 }
@@ -59,9 +61,14 @@ export function Segmented<T extends string>({
   onChange: (v: T) => void
 }) {
   return (
-    <div className="seg flex-wrap">
+    <div className="seg max-w-full flex-wrap overflow-x-auto">
       {options.map((o) => (
-        <button key={o} type="button" className={o === value ? 'seg-on' : 'seg-off'} onClick={() => onChange(o)}>
+        <button
+          key={o}
+          type="button"
+          className={`${o === value ? 'seg-on' : 'seg-off'} whitespace-nowrap`}
+          onClick={() => onChange(o)}
+        >
           {o}
         </button>
       ))}
@@ -81,10 +88,10 @@ export function Select<T extends string>({
   label?: string
 }) {
   return (
-    <label className="inline-flex items-center gap-2 text-xs text-ink-muted">
-      {label && <span className="font-medium">{label}</span>}
+    <label className="inline-flex min-w-0 items-center gap-2 text-xs text-ink-muted">
+      {label && <span className="shrink-0 font-medium">{label}</span>}
       <select
-        className="rounded-md border border-line bg-surface px-2.5 py-1.5 text-sm text-ink focus:border-leaf"
+        className="min-w-0 max-w-[60vw] rounded-md border border-line bg-surface px-2.5 py-1.5 text-sm text-ink focus:border-leaf sm:max-w-none"
         value={value}
         onChange={(e) => onChange(e.target.value as T)}
       >
